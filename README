@@ -1,0 +1,26 @@
+An additional command line argument has been added in lookup.sh, which takes the place of $1 and tells which part is calling lookup.
+lookup.sh usage:
+./lookup.sh <part_num> <arguments as per different parts>
+EXAMPLES
+3.1 ./lookup.sh 1 ABSOLUT
+3.3 ./lookup.sh 3 Qprefix.fst PRES
+
+If possible, please run the parts in order since there are some dependencies and re-using of files/symbol tables.
+
+The intermediate files have not been deleted, this helps in better understanding/debugging.
+
+
+The program for 3.4 deletes fstdir if it exists already.
+
+Assumption that the folder name is given in the form folder and not folder/
+
+Helper python files:
+genFST.py : generates files for 3.1 fst
+genFSTlet.py : generates files for 3.2 fst
+generatePrefixFiles.py: 3.3 files
+genSuffixFiles.py: 3.4 files
+acceptor.py & acceptLet.py : For building acceptors for words and letter sequences respectively
+genMatch.py : generates output for lookup-merge.sh
+Print "Not found" if no pronunciation is found.
+
+
